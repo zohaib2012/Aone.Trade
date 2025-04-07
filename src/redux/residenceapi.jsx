@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const residenceapi = createApi({
   reducerPath: 'residenceapi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:3000/api',
+    baseUrl: 'https://aonebackend-production.up.railway.app/api',
 
   }),
   endpoints: (builder) => ({
