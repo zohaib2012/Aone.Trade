@@ -50,7 +50,8 @@ const Dashboard = () => {
             disabled={isLoading}
             className="py-2 px-3 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition"
           >
-            {isLoading ? 'Logging out...' : <div className=' text-gray-700 scale-150 hover:text-red-600  text-md'><MdLogout /> </div>}
+            {isLoading ? 'Logging out...' : <div className=' text-gray-700 scale-150 hover:text-red-600  text-md'>
+              <Link to={"/"}><MdLogout /></Link> </div>}
           </button>):("")}
 
 

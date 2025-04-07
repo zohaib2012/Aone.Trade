@@ -33,7 +33,7 @@ const AccountTypes = () => {
   ];
 
   return (
-    <div className=" container flex mx-auto max-w-7xl h-96 border border-red-500">
+    <div className=" container flex mx-auto max-w-7xl h-96 border border-red-500 ">
       {accounts.map((account, index) => (
         <div 
           key={index}

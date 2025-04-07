@@ -52,7 +52,7 @@ const Login = () => {
 
       localStorage.setItem("auth token", token)
       localStorage.setItem('userId', user._id);
-      
+      navigate("/profile")
     } catch (err) {
       console.error('Failed to login:', err);
       setFormErrors({

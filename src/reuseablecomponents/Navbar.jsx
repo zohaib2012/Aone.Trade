@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="flex items-center space-x-12">
         <div>
 
-          <img src="public/WhatsApp Image 2025-03-28 at 05.55.05.png" alt="UK Flag" className="w-14 h-14 p-2" />
+          <img src="/landingpagelogo.svg" className="w-14 h-14 p-2" />
         </div>
 
         {/* Navigation Menu Items */}
@@ -67,5 +67,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
 

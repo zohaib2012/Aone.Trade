@@ -12,7 +12,7 @@ import DepositPaymentmethod from './component/Component(Admin)/DepositPaymentmet
 // import TransactionConfirmationForm from './component/Component(Admin)/TransactionConfirmationForm '
 import Support from './component/Component(Admin)/Support'
 import Passwordsetting from './component/Component(Admin)/Passwordsetting'
-import OpenNewAccounttype from './component/Component(Admin)/opennewAccounttype'
+import OpenNewAccountType from './component/Component(Admin)/OpenNewAccounttype'
 // import TradingAccountsTable from './component/Component(Admin)/TradingAccountTable'
 import Emailverification from './component/Component(Admin)/Emailverification'
 import NumberVerification from './component/Component(Admin)/NumberVerification'
@@ -64,7 +64,7 @@ if(token){
       <Route path='/wallet/deposit/money' element={<TransactionConfirmationForm/>}/>
       <Route path='/profile/support' element={<Support/>}/>
       <Route path='/profile/password' element={<Passwordsetting/>}/>
-      <Route path='/profile/open/new/account' element={<OpenNewAccounttype/>}/>
+      <Route path='/profile/open/new/account' element={<OpenNewAccountType/>}/>
       {/* <Route path='/Trading/Account/Table' element={<TradingAccountsTable/>}/> */}
       <Route path='/Trading/Account/Table' element={<TradeTable/>}/>
       <Route path='/profile/email/verification' element={<Emailverification/>}/>

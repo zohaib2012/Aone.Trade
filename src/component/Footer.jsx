@@ -10,13 +10,13 @@ const Footer = () => {
           <img 
             src="public/A-One - Logo-02.svg" 
             alt="Munafa Capital Logo" 
-            className="h-10"
+            className="h-12 w-12"
           />
 
-          <div className="ml-2">
-            <p className="font-bold text-lg">MUNAFA CAPITAL</p>
+          {/* <div className="ml-2">
+            <p className="font-bold text-lg">A</p>
             <p className="text-xs">Official Partner of <img src="public/A-One - Logo-02.svg" alt="Partner Logo" className="inline h-4 ml-1" /></p>
-          </div>
+          </div> */}
 
         </div>
         
