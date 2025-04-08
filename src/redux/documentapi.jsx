@@ -4,6 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const documentapi = createApi({
   reducerPath: 'documentapi',
   baseQuery: fetchBaseQuery({
+    // baseUrl: 'http://localhost:3000/api',
     baseUrl: 'https://aonebackend-production.up.railway.app/api',
   // prepareHeaders: (headers) => {
   //   const token = localStorage.getItem('auth token'); 

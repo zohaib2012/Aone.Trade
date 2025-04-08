@@ -49,9 +49,8 @@ const Login = () => {
       console.log('Login successful:', response);
       
       const token=response.logintoken
-
+console.log(token)
       localStorage.setItem("auth token", token)
-      localStorage.setItem('userId', user._id);
       navigate("/profile")
     } catch (err) {
       console.error('Failed to login:', err);
