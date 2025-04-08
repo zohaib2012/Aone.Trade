@@ -38,7 +38,7 @@ checkauthentication()
 },[])
 
  let checkauthentication=()=>{
-const token=localStorage.getItem('auth token')
+const token=localStorage.getItem('token')
 if(token){
   navigate("/profile")
 }else{

@@ -50,7 +50,7 @@ const Login = () => {
       
       const token=response.logintoken
 console.log(token)
-      localStorage.setItem("auth token", token)
+      localStorage.setItem("token", token)
       navigate("/profile")
     } catch (err) {
       console.error('Failed to login:', err);

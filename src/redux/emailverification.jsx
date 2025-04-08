@@ -2,8 +2,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
-  // baseUrl: "http://localhost:3000/api/verify",
-  baseUrl: "https://aonebackend-production.up.railway.app/api/verify",
+  baseUrl: "http://localhost:3000/api/verify",
+  // baseUrl: "https://aonebackend-production.up.railway.app/api/verify",
   credentials: "include", // Ensures cookies are sent with requests
 
 });
