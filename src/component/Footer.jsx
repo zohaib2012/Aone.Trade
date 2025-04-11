@@ -1,7 +1,7 @@
 
 
 const Footer = () => {
-  const token=localStorage.getItem('token')
+  const token=localStorage.getItem('auth token')
   return (
 
     <footer className={ token ?("hidden"): ("bg-gray-900 text-white w-full") }>

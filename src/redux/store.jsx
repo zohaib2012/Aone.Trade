@@ -7,8 +7,7 @@ import { emailapi } from './emailverification';
 import { createaccountapi } from './createaccountapi';
 import { documentapi } from './documentapi';
 import { residenceapi } from './residenceapi';
-// import { userSlice } from './userslice';
-// import {userSlice} from ''
+import { messagesapi } from './messagesapi';
 
 export const store = configureStore({
     reducer: {
@@ -19,7 +18,8 @@ export const store = configureStore({
         [transcationapi.reducerPath]: transcationapi.reducer,
         [emailapi.reducerPath]: emailapi.reducer,
         [createaccountapi.reducerPath]: createaccountapi.reducer,
-        [residenceapi.reducerPath]: residenceapi.reducer
+        [residenceapi.reducerPath]: residenceapi.reducer,
+        [messagesapi.reducerPath]:messagesapi.reducer
 
     },
 
@@ -32,8 +32,7 @@ export const store = configureStore({
         .concat(emailapi.middleware)
         .concat(createaccountapi.middleware)
         .concat(residenceapi.middleware)
-    // .concat(userSlice.middleware)
-
+        .concat(messagesapi.middleware)
 })
 setupListeners(store.dispatch);
 

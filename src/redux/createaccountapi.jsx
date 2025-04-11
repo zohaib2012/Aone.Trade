@@ -2,8 +2,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
-    // baseUrl: "http://localhost:3000/api",
-    baseUrl: "https://aonebackend-production.up.railway.app/api",
+    baseUrl: "http://localhost:3000/api",
+    // baseUrl: "https://aonebackend-production.up.railway.app/api",
     credentials: "include", // Ensures cookies are sent with requests
 
 });
@@ -31,6 +31,10 @@ export const createaccountapi = createApi({
             query: () => "/account/details",
             providesTags: ["accounts"], // Changed from invalidatesTags to providesTags
         }),
+        getallaccountsdetails: builder.query({
+            query: () => "/account/all/getdata",
+            providesTags: ["accounts"], // Changed from invalidatesTags to providesTags
+        }),
 
 
     }),
@@ -39,5 +43,6 @@ export const createaccountapi = createApi({
 export const {
 
 useCreateAccountMutation,
-useAccountDetailsQuery
+useAccountDetailsQuery,
+useGetallaccountsdetailsQuery
 } = createaccountapi;

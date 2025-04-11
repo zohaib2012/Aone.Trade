@@ -2,7 +2,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-  const token = localStorage.getItem('token')
+  const token = localStorage.getItem('auth token')
 
   const navigate = useNavigate();
 

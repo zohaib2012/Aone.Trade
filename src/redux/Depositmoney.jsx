@@ -2,8 +2,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
-  // baseUrl: "http://localhost:3000/api",
-  baseUrl: "https://aonebackend-production.up.railway.app/api",
+  baseUrl: "http://localhost:3000/api",
+  // baseUrl: "https://aonebackend-production.up.railway.app/api",
   credentials: "include", // Ensures cookies are sent with requests
 
 });
@@ -14,7 +14,7 @@ export const transcationapi = createApi({
   tagTypes: ["code"], // Defined tag types properly
   endpoints: (builder) => ({
     
-    // User Registration
+    
     sendMoney: builder.mutation({
       query: (formData) => ({
         method: "POST",
@@ -25,12 +25,15 @@ export const transcationapi = createApi({
       invalidatesTags: ["code"],
     }),
 
-    // User Login
+  
     displayMoney: builder.query({
         
-    query:()=>`/getdata`,
+    query:()=>`/transactions/all/getdata`,
     invalidatesTags:["code"]
     }),
+
+
+
   }),
 });
 

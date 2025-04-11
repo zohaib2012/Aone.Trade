@@ -28,6 +28,14 @@ import CodeVerification from './component/Component(Admin)/Codeverification'
 import Joinus from './component/Component(Admin)/Joinus'
 import { useEffect } from 'react'
 import { TradeTable } from './component/Component(Admin)/TradeTable'
+import {  Sidebar } from './component/admin_pannel/sidebar'
+import { UsersList } from './component/admin_pannel/UsersList'
+import { Depositmoney } from './component/admin_pannel/Depositmoney'
+import { AllDocuments } from './component/admin_pannel/AllDocuments'
+import { PersonalDetails } from './component/admin_pannel/PersonalDetails'
+import { Residencialdocs } from './component/admin_pannel/Residencialdocs'
+import { Newlyopenedaccounts } from './component/admin_pannel/Newlyopenedaccounts'
+import { Displaymessages } from './component/admin_pannel/Displaymessages'
 
 const App = () => {
 
@@ -38,7 +46,7 @@ checkauthentication()
 },[])
 
  let checkauthentication=()=>{
-const token=localStorage.getItem('token')
+const token=localStorage.getItem('auth token')
 if(token){
   navigate("/profile")
 }else{
@@ -56,6 +64,7 @@ if(token){
       <Route path='/login' element={<Login />}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/contactus' element={<ContactUs/>}/>
+
       <Route path='/profile/personalDetail' element={<PersonalDetailsForm/>}/>
       <Route path='/profile/contactDetail' element={<ContactDetail/>}/>
       <Route path='/wallet/transfer' element={<Transferpayment/>}/>
@@ -65,7 +74,6 @@ if(token){
       <Route path='/profile/support' element={<Support/>}/>
       <Route path='/profile/password' element={<Passwordsetting/>}/>
       <Route path='/profile/open/new/account' element={<OpenNewAccountType/>}/>
-      {/* <Route path='/Trading/Account/Table' element={<TradingAccountsTable/>}/> */}
       <Route path='/Trading/Account/Table' element={<TradeTable/>}/>
       <Route path='/profile/email/verification' element={<Emailverification/>}/>
       <Route path='/profile/number/verification' element={<NumberVerification/>}/>
@@ -77,6 +85,16 @@ if(token){
       <Route path='/profile/code/verification' element={<CodeVerification/>}/>
       <Route path='/profile/joinus' element={<Joinus/>}/>
       <Route path='/profile' element={<Dashboard/>}/>
+
+      <Route path='/data' element={<Sidebar />}/>
+      <Route path='/users/list' element={<UsersList />}/>
+      <Route path='/money/deposited' element={<Depositmoney />}/>
+      <Route path='/all/documents' element={<AllDocuments />}/>
+      <Route path='/all/personal/details' element={<PersonalDetails />}/>
+      <Route path='/all/residencial/documents' element={<Residencialdocs />}/>
+      <Route path='/all/newlyopened/accounts' element={<Newlyopenedaccounts />}/>
+      <Route path='/all/messages' element={<Displaymessages />}/>
+      
      </Routes>
     </Layout>
     </div>

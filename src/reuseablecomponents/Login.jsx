@@ -10,7 +10,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [formErrors, setFormErrors] = useState({});
- 
+
   // Get the mutation hook from RTK Query
   const [loginUser, { isLoading, isSuccess, isError, error }] = useLoginUserMutation();
   const navigate = useNavigate();
@@ -23,8 +23,8 @@ const Login = () => {
       setEmail('');
       setPassword('');
       setFormErrors({});
-      
-      
+
+
     }
   }, [isSuccess, navigate]);
 
@@ -32,26 +32,36 @@ const Login = () => {
     const errors = {};
     if (!email) errors.email = 'This field is mandatory';
     if (!password) errors.password = 'Password is required';
-    
+
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) return;
-    
+
     try {
       // Call the RTK Query mutation with the form data
       const response = await loginUser({ email, password }).unwrap();
 
+
       console.log('Login successful:', response);
+
+      const token = response.logintoken
+      console.log(token)
+      localStorage.setItem("auth token", token)
+      // navigate("/profile")
       
-      const token=response.logintoken
-console.log(token)
-      localStorage.setItem("token", token)
-      navigate("/profile")
+      if (email === "zk43260139@gmail.com" && password === "aone012345") {
+        navigate("/data");
+      } else {
+        navigate("/profile")
+    
+      }
+
+
     } catch (err) {
       console.error('Failed to login:', err);
       setFormErrors({
@@ -62,21 +72,21 @@ console.log(token)
   };
 
   return (
-      <div className="m-3  flex container max-w-4xl mx-auto  md:flex-row w-full bg-gray-100 h-auto">
-      
-    
-          {/* Responsive Right Section */}
-          <div className=" w-full  lg:w-max-w-7xl flex items-center justify-center relative p-4 md:p-0">
-            {/* Close Button */}
-            <button className="absolute top-4 right-4 text-2xl font-bold text-gray-600">
-              <X size={24} />
-            </button>
-    
-            <div className="border-2 border-black p-3 w-full max-w-md px-4 md:px-8">
-              <div className="mb-8 text-center md:text-left">
-                <h1 className="text-2xl md:text-3xl font-bold text-red-500 mb-2">Aone</h1>
-                <h2 className="text-xl md:text-2xl font-semibold">Login to your Account</h2>
-              </div>
+    <div className="m-3  flex container max-w-4xl mx-auto  md:flex-row w-full bg-gray-100 h-auto">
+
+
+      {/* Responsive Right Section */}
+      <div className=" w-full  lg:w-max-w-7xl flex items-center justify-center relative p-4 md:p-0">
+        {/* Close Button */}
+        <button className="absolute top-4 right-4 text-2xl font-bold text-gray-600">
+          <X size={24} />
+        </button>
+
+        <div className="border-2 border-black p-3 w-full max-w-md px-4 md:px-8">
+          <div className="mb-8 text-center md:text-left">
+            <h1 className="text-2xl md:text-3xl font-bold text-red-500 mb-2">Aone</h1>
+            <h2 className="text-xl md:text-2xl font-semibold">Login to your Account</h2>
+          </div>
 
           {isError && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -99,7 +109,7 @@ console.log(token)
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Email Input */}
             <div>
-              <input 
+              <input
                 type="email"
                 placeholder="Enter your e-mail"
                 value={email}
@@ -118,7 +128,7 @@ console.log(token)
 
             {/* Password Input */}
             <div className="relative">
-              <input 
+              <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter Password"
                 value={password}
@@ -128,7 +138,7 @@ console.log(token)
                   pr-10 text-sm md:text-base"
                 disabled={isLoading}
               />
-              <button 
+              <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute right-0 top-1/2 -translate-y-1/2 px-3"
@@ -144,7 +154,7 @@ console.log(token)
             </div>
 
             {/* Submit Button */}
-            <button 
+            <button
               type="submit"
               className="w-full bg-blue-500 text-white 
                 py-3 rounded-lg hover:bg-blue-600 

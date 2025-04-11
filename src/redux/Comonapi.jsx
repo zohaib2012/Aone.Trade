@@ -2,8 +2,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
-  // baseUrl: "http://localhost:3000/api",
-  baseUrl: "https://aonebackend-production.up.railway.app/api",
+  baseUrl: "http://localhost:3000/api",
+  // baseUrl: "https://aonebackend-production.up.railway.app/api",
   credentials: "include", // Ensures cookies are sent with requests
 
 });
@@ -43,6 +43,13 @@ export const commonapi = createApi({
       invalidatesTags: ['User']
     }),
 
+    
+    usersList: builder.query({
+      query: () => "/users/get",
+      providesTags: ["accounts"], 
+  }),
+
+
   }),
 });
 
@@ -50,5 +57,6 @@ export const {
   
   useRegisterUserMutation, 
   useLoginUserMutation,
-  useLogoutMutation
+  useLogoutMutation,
+  useUsersListQuery
 } = commonapi;

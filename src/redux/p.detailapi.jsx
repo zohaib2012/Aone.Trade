@@ -2,8 +2,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
-    // baseUrl: "http://localhost:3000/api",
-    baseUrl: "https://aonebackend-production.up.railway.app/api",
+    baseUrl: "http://localhost:3000/api",
+    // baseUrl: "https://aonebackend-production.up.railway.app/api",
     credentials: "include"
 })
 
@@ -25,7 +25,7 @@ senddetails:builder.mutation({
 }),
 
 displaydetails:builder.query({
-    query:()=>`/p-detail/display`,
+    query:()=>`/p-detail/all/getdata`,
     invalidatesTags:["details"]
 })
 
