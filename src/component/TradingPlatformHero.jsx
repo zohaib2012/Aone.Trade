@@ -79,7 +79,7 @@ const TradingPlatformHero = () => {
         <div className="relative h-[600px] w-full overflow-hidden">
           {/* Video for larger screens */}
           <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover hidden md:block">
-            <source src="/public/Aonetradevideo.mp4" type="video/mp4" />
+            <source src="frontend/public/Aonetradevideo.mp4" type="video/mp4" />
           </video>
 
           {/* Fallback image for mobile */}
@@ -95,8 +95,8 @@ const TradingPlatformHero = () => {
               {/* Logo - Centered on mobile */}
               <img 
                 className='w-24 h-24 md:w-32 md:h-32 mx-auto md:mx-44 my-6 md:my-24' 
-                src="public/A-One - Logo-02.svg" 
-                alt="error" 
+                src="/public/landingpagelogo.svg" 
+                alt="logo" 
               />
               
               {/* Center text - Centered on mobile */}
