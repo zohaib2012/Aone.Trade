@@ -11,7 +11,7 @@ import Depositpaymentaccount from './component/Component(Admin)/Depositpaymentac
 import DepositPaymentmethod from './component/Component(Admin)/DepositPaymentmethod'
 // import TransactionConfirmationForm from './component/Component(Admin)/TransactionConfirmationForm '
 import Support from './component/Component(Admin)/Support'
-import Passwordsetting from './component/Component(Admin)/Passwordsetting'
+import Passwordsetting from './component/Component(Admin)/updatepassword'
 import OpenNewAccountType from './component/Component(Admin)/OpenNewAccounttype'
 // import TradingAccountsTable from './component/Component(Admin)/TradingAccountTable'
 import Emailverification from './component/Component(Admin)/Emailverification'
@@ -36,6 +36,9 @@ import { PersonalDetails } from './component/admin_pannel/PersonalDetails'
 import { Residencialdocs } from './component/admin_pannel/Residencialdocs'
 import { Newlyopenedaccounts } from './component/admin_pannel/Newlyopenedaccounts'
 import { Displaymessages } from './component/admin_pannel/Displaymessages'
+import E_Verift_Forgetpassword from './reuseablecomponents/E_Verift_Forgetpassword'
+import C_verify_forgetpassword from './reuseablecomponents/C_verify_forgetpassword'
+import Forgetpasword from './reuseablecomponents/Forgetpasword'
 
 const App = () => {
 
@@ -64,6 +67,9 @@ if(token){
       <Route path='/login' element={<Login />}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/contactus' element={<ContactUs/>}/>
+      <Route path='/verify/email' element={<E_Verift_Forgetpassword/>}/>
+      <Route path='/verify/code' element={<C_verify_forgetpassword/>}/>
+      <Route path='/password/forget' element={<Forgetpasword/>}/>
 
       <Route path='/profile/personalDetail' element={<PersonalDetailsForm/>}/>
       <Route path='/profile/contactDetail' element={<ContactDetail/>}/>

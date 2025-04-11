@@ -17,9 +17,9 @@ const Navbar = () => {
 
         {/* Navigation Menu Items */}
         <div className="flex space-x-12 text-md font-semibold text-black">
-          <a href="/" className="hover:text-blue-600 hover:underline hover:underline-offset-8 hover:decoration-2 hover:decoration-blue-600">Home</a>
-          <a href="/" className="hover:text-blue-600  hover:underline hover:underline-offset-8 hover:decoration-2 hover:decoration-blue-600">Trading</a>
-          <a href="/contactus" className="hover:text-blue-600  hover:underline hover:underline-offset-8 hover:decoration-2 hover:decoration-blue-600">Contact us</a>
+          <Link to={"/"} className="hover:text-blue-600 hover:underline hover:underline-offset-8 hover:decoration-2 hover:decoration-blue-600">Home</Link>
+          <Link to={"/"} className="hover:text-blue-600  hover:underline hover:underline-offset-8 hover:decoration-2 hover:decoration-blue-600">Trading</Link>
+          <Link to={"/contactus"}  className="hover:text-blue-600  hover:underline hover:underline-offset-8 hover:decoration-2 hover:decoration-blue-600">Contact us</Link>
         </div>
       </div>
 

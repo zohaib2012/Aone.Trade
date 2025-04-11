@@ -101,11 +101,11 @@ const Dashboard = () => {
                   <span>Accounts</span>
                 </div>
               </Link>
-              <Link to={"/data"}>
+              {/* <Link to={"/data"}>
                 <div className="flex my-2 items-center hover:text-red-600 ml-3 text-gray-400 hover:bg-[#3C3C3C] p-2 rounded">
                   <span>Accounts</span>
                 </div>
-              </Link>
+              </Link> */}
 
             </div>
           </div>

@@ -1,7 +1,7 @@
 
 
 import { useState, useEffect } from 'react';
-import { Eye, EyeOff, X } from 'lucide-react';
+import { Eye, EyeOff } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useLoginUserMutation } from '../redux/Comonapi';
 
@@ -53,12 +53,12 @@ const Login = () => {
       console.log(token)
       localStorage.setItem("auth token", token)
       // navigate("/profile")
-      
+
       if (email === "zk43260139@gmail.com" && password === "aone012345") {
         navigate("/data");
       } else {
         navigate("/profile")
-    
+
       }
 
 
@@ -77,11 +77,7 @@ const Login = () => {
 
       {/* Responsive Right Section */}
       <div className=" w-full  lg:w-max-w-7xl flex items-center justify-center relative p-4 md:p-0">
-        {/* Close Button */}
-        <button className="absolute top-4 right-4 text-2xl font-bold text-gray-600">
-          <X size={24} />
-        </button>
-
+      
         <div className="border-2 border-black p-3 w-full max-w-md px-4 md:px-8">
           <div className="mb-8 text-center md:text-left">
             <h1 className="text-2xl md:text-3xl font-bold text-red-500 mb-2">Aone</h1>
@@ -170,7 +166,15 @@ const Login = () => {
               <Link to="/register" className="text-blue-500 hover:underline">
                 Register
               </Link>
+
             </div>
+
+            <div className='text-center'>
+              <Link to="/verify/email" className="text-red-500 hover:underline">
+                Forget password
+              </Link>
+            </div>
+
           </form>
         </div>
       </div>

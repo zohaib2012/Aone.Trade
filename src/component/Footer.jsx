@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex items-center mb-4 md:mb-0">
           <img 
             src="public/A-One - Logo-02.svg" 
-            alt="Munafa Capital Logo" 
+            alt="Aone Trade" 
             className="h-12 w-12"
           />
 

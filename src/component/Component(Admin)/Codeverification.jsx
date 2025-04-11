@@ -3,8 +3,6 @@ import { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { useVerifyCodeMutation } from '../../redux/emailverification';
-// import { useVerifyCodeMutation } from '../redux/commonapi';
-// import { Link } from 'react-router-dom';
 const CodeVerification = () => {
     const [sendCode,{isError,isLoading,error,isSuccess}]=useVerifyCodeMutation()
   const [formData, setFormData] = useState({
